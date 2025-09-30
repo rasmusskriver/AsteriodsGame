@@ -1,5 +1,6 @@
 import pygame
 import sys
+import random
 from constants import *
 from player import Player
 from asteroid import Asteroid
@@ -39,7 +40,7 @@ def main():
             for shot in shots:
                 if shot.collision(asteroid):
                     shot.kill()
-                    asteroid.kill()
+                    asteroid.split()
 
         for asteroid in asteroids:
             if player.collision(asteroid):
